@@ -1,17 +1,21 @@
 import React, { useState,useEffect } from 'react';
 
 import './App.css';
+import { getProducts } from './services/api';
 
 function App() {
-  const {isTop,setIsTop}= useState(false);
+  const [isTop,setIsTop]= useState(false);
 
   useEffect(()=>{
-    function moveTop(){
-      if(window.scrollY>0){
-        setIsTop(false);
-    }
+    // getProducts();
+    moveToTop();
+  });
+
+  function moveToTop(){
+    setTimeout(() =>{
+      setIsTop(true);
+    }, 1000);
   }
-});
 
   
   return (
